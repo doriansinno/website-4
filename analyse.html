@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodCheck | Analyse</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">BloodCheck</div>
+        <nav>
+            <a href="index.html">Start</a>
+            <a href="analyse.html" class="active">Analyse</a>
+            <a href="info.html">Info</a>
+            <a href="quellen.html">Quellen</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="dsgvo.html">DSGVO</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h1>Analyse deiner Laborwerte</h1>
+            <p>Wähle Geschlecht und Blutprofil aus, trage die gemessenen Werte ein und erhalte sofortige Hinweise.</p>
+            <div class="grid two">
+                <label class="field">
+                    <span>Geschlecht</span>
+                    <select id="gender">
+                        <option value="Mann">Mann</option>
+                        <option value="Frau">Frau</option>
+                    </select>
+                </label>
+                <label class="field">
+                    <span>Blutbild-Art</span>
+                    <select id="profile">
+                        <option value="Kleines Blutbild">Kleines Blutbild</option>
+                        <option value="Großes Blutbild">Großes Blutbild</option>
+                        <option value="Hormonprofil">Hormonprofil</option>
+                    </select>
+                </label>
+            </div>
+        </section>
+
+        <section class="card" id="inputs-card">
+            <h2>Werte eingeben</h2>
+            <div id="inputs" class="grid two"></div>
+        </section>
+
+        <section class="card" id="results-card">
+            <div class="actions">
+                <button id="analyze">Analyse starten</button>
+                <button id="export">PDF exportieren</button>
+            </div>
+            <div id="results"></div>
+            <canvas id="statusChart" aria-label="Übersicht der Werte" role="img"></canvas>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 BloodCheck – Schulprojekt</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
